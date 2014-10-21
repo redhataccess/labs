@@ -7,8 +7,12 @@ var LabSchema = new Schema({
   name: String,
   lab_id: String,
   version: String,
-  description: String
+  type: String,
+  description: String,
+  isFeatured: {
+    type: Boolean,
+    default: false
+  }
 });
 
 mongoose.model('Lab', LabSchema);
-
