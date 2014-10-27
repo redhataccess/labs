@@ -9,7 +9,11 @@ var LabSchema = new Schema({
   version: String,
   type: String,
   description: String,
-  isFeatured: {
+  featured: {
+    type: Boolean,
+    default: false
+  },
+  mostViewed: {
     type: Boolean,
     default: false
   }

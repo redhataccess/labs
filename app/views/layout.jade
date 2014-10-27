@@ -1,25 +1,27 @@
 doctype html
-html.no-js.bootstrap3.next.chrometwo(lang='en')
+html.no-js.bootstrap3.nimbus.chrometwo.legacyfalse(lang='en')
   head
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width')
     title= title
-    link(rel='shortcut icon', href='https://access.devgssci.devlab.phx1.redhat.com/sites/default/files/shadowman.ico', type='image/vnd.microsoft.icon')
+    link(rel='shortcut icon', href='/sites/default/files/shadowman.ico', type='image/vnd.microsoft.icon')
     block css
       link(rel='stylesheet', href='/chrome_themes/umbra/s/chrometwo.css')
+      link(rel='stylesheet', href='/css/style.css')
     block js
       script(src='/webassets/avalon/j/lib/require.js')
       script(src='http://localhost:35729/livereload.js')
-  body
+      if isAdmin
+        script(src='/js/app.js')
+  body.labs
     #chrometwo(style='display: none;')
       #main
         block content
 
   script.
     window.breadcrumbs = [
-      ['Tools', '/home'],
       ['Labs', '/labs']
     ];
     window.chrometwo_require(['jquery'], function(jq) {
-        jq('#chrometwo').fadeIn();
+        jq('#chrometwo').show();
     });

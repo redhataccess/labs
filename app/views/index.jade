@@ -1,44 +1,39 @@
 extends layout
 
 block content
-  article#main-content.labs
-    span#watermark
-    h1#page-title.title Labs
-    .content-area
-      #doc
-        .section
-          .region.region-content
-            #block-system-main.block.block-system.first.last.odd.count-1
-              .content
-              .view.view-labslist.view-id-labslist.view-display-id-labs_list_main_page.labs-main
-                .view-header
-                  .row
-                    .col-md-8
-                      p To help you use Red Hat products to their full potential, our engineers have developed a set of tools within Red Hat Access Labs to support customer success. 
-                        | Red Hat Access Labs is built on 
-                        a(href='https://access.redhat.com/products/openshift-enterprise-red-hat/') OpenShift Enterprise
-                        |, enabling continuous delivery and continuous innovation.
-                      p We invite you to try these tools and tell us what you think. As our customer community collaborates and offers feedback, 
-                        | these applications will grow and change quickly. Get started here with the featured labs below!
-
-                if labs.length
-                  .attachment.attachment-before
-                    .view.view-labslist.view-id-labslist.view-display-id-featured_labs_attachment.labs
-                      .view-header
-                        h2 Featured Labs
-                      .view-content
-                        each lab in labs
-                          li.labs-item.col-md-4.col-xs-12
-                            a(href='/labs/#{lab.lab_id}/')
-                                span.labs-icon-performance
-                                h3 #{lab.name}
-                                dl.labs-version
-                                  dt Version:
-                                  dd #{lab.version}
-                                p
-                                  | #{lab.description}
-                            ul.lab-links
-                              li.go-link
-                                a(href='/labs/#{lab.lab_id}/') Go to App
-                              li.more-info
-                                a(href='/labsinfo/#{lab.lab_id}') More info
+  .band.band-hero.band-hero-cover.band-hero-top(style='background-image: url(http://www.redhat.com/profiles/rh/themes/redhatdotcom/img/header/header-story-tech-industries-2000x1357.jpg);')
+    .container
+      .hero
+        p.headline.headline-white Labs
+        p.strapline.strapline-white To help you use Red Hat products to their full potential, our engineers have developed a set of tools within Red Hat Access Labs to support customer success. 
+              | Red Hat Access Labs is built on 
+              a(href='https://access.redhat.com/products/openshift-enterprise-red-hat/') OpenShift Enterprise
+              |, enabling continuous delivery and continuous innovation.
+        p.strapline.strapline-white We invite you to try these tools and tell us what you think. As our customer community collaborates and offers feedback, 
+          | these applications will grow and change quickly. Get started here with the featured labs below!
+  .band.band-hero.band-hero-cover.band-hero-top.inverse.labs(style='background-image: url(http://www.redhat.com/profiles/rh/themes/redhatdotcom/img/bkgd/bkgd-ltc-wispy_sky_2-2000x680.jpg);')
+    .container
+      .hero
+        if featured.length
+          h2.section-title.section-title-red Featured Apps
+          .row
+            each lab in featured
+              include _lab.jade
+  .band.labs
+    .container
+      .hero
+        if featured.length
+          h2.section-title.section-title-red Most Viewed Apps
+          .row
+            each lab in featured
+              include _lab.jade
+  .band.band-hero.band-hero-cover.band-hero-top.inverse.labs(style='background-image: url(http://www.redhat.com/cms/public/Open_Hybrid_Cloud.jpg);')
+    .container
+      .hero
+        if labs.length
+          h2.section-title.section-title-red All Apps
+          .row
+            each lab in labs
+              include _lab.jade
+  .btn.btn-primary.btn-admin
+    | SAVE

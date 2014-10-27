@@ -1,0 +1,26 @@
+.col-md-4.col-sm-6
+  .card
+    a.card--link(href='/labs/#{lab.lab_id}/')
+      .content
+        .meta
+          span.icon
+             span(class='labs-icon-#{lab.type}')
+          span.version.pull-right
+            strong v 
+            span.h2.section-title.version-number #{lab.version}
+        h2.section-title.lab-name #{lab.name}
+        p #{lab.description}
+    .links
+      .col-md-6.col-border.col-border-right
+        a(href='/labs/#{lab.lab_id}/') Go to App
+      .col-md-6.col-border.col-border-left
+        a(href='/labsinfo/#{lab.lab_id}/') More info
+    .actions
+      label.checkbox-inline
+        input(type='checkbox', value='featured', checked=lab.featured)
+        | Featured
+      label.checkbox-inline
+        input(type='checkbox', value='mostviewed', checked=lab.mostViewed)
+        | Most Viewed
+
+

@@ -10,11 +10,21 @@ module.exports = function(app) {
 };
 
 router.get('/labs', function(req, res, next) {
+  debugger;
   Lab.find(function(err, labs) {
     if (err) return next(err);
+    if (req.get('Content-Type') === 'application/json') {
+      return res.json(labs);
+    }
+    var featured = labs.filter(function(lab) {
+      return lab.isFeatured;
+    });
+    var isAdmin = (typeof req.query.admin !== 'undefined');
     res.render('index', {
       title: 'Labs - Red Hat Customer Portal',
-      labs: labs
+      featured: featured,
+      labs: labs,
+      isAdmin: isAdmin
     });
   });
 });
