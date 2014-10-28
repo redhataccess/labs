@@ -33,7 +33,7 @@ var config = {
     },
     ip: process.env.OPENSHIFT_NODEDIY_IP,
     port: process.env.OPENSHIFT_NODEDIY_port,
-    db: 'mongodb://localhost/labs-production'
+    db: process.env.OPENSHIFT_MONGODB_DB_URL+process.env.OPENSHIFT_APP_NAME || 'mongodb://localhost/labs-production'
 
   }
 };
