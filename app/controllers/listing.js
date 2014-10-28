@@ -9,8 +9,7 @@ module.exports = function(app) {
   app.use('/', router);
 };
 
-router.get('/labs', function(req, res, next) {
-  debugger;
+router.get(['/labs', '/labs/labs'], function(req, res, next) {
   Lab.find(function(err, labs) {
     if (err) return next(err);
     if (req.get('Content-Type') === 'application/json') {
