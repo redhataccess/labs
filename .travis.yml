@@ -1,0 +1,8 @@
+before_install:
+- openssl aes-256-cbc -K $encrypted_04d1ded1d19c_key -iv $encrypted_04d1ded1d19c_iv
+  -in id_prod.pub.enc -out id_prod.pub -d
+after_success:
+  - chmod 600 .travis/id_prod.pub
+  - ssh-add .travis/id_prod.pub
+  - git remote add deploy_prod $PROD_REPO
+  - git push deploy_prod -f

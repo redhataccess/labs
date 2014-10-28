@@ -1,3 +1,4 @@
 node_modules/
 public/bower_components
 .sass-cache
+.travis/id_prod.pub
