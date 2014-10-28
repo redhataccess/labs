@@ -32,7 +32,7 @@ var config = {
       name: 'labs'
     },
     ip: process.env.OPENSHIFT_NODEDIY_IP,
-    port: process.env.OPENSHIFT_NODEDIY_port,
+    port: process.env.OPENSHIFT_NODEDIY_PORT,
     db: process.env.OPENSHIFT_MONGODB_DB_URL+process.env.OPENSHIFT_APP_NAME || 'mongodb://localhost/labs-production'
 
   }
