@@ -9,4 +9,4 @@ after_success:
   - chmod 600 .travis/id_prod.pub
   - ssh-add .travis/id_prod.pub
   - git remote add deploy_prod $PROD_REPO
-  - git push deploy_prod -f
+  - git push deploy_prod master -f
