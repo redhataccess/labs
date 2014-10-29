@@ -5,7 +5,11 @@ var express = require('express'),
   mongoose = require('mongoose'),
   Lab = mongoose.model('Lab');
 
+var isDev = false;
 module.exports = function(app) {
+  if (app.get('env') === 'development') {
+    isDev = true;
+  }
   app.use('/', router);
 };
 
@@ -16,14 +20,15 @@ router.get(['/labs', '/labs/labs'], function(req, res, next) {
       return res.json(labs);
     }
     var featured = labs.filter(function(lab) {
-      return lab.isFeatured;
+      return lab.featured;
     });
     var isAdmin = (typeof req.query.admin !== 'undefined');
     res.render('index', {
       title: 'Labs - Red Hat Customer Portal',
       featured: featured,
       labs: labs,
-      isAdmin: isAdmin
+      isAdmin: isAdmin,
+      isDev: isDev
     });
   });
 });

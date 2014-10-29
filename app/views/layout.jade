@@ -6,11 +6,12 @@ html.no-js.bootstrap3.nimbus.chrometwo.legacyfalse(lang='en')
     title= title
     link(rel='shortcut icon', href='/sites/default/files/shadowman.ico', type='image/vnd.microsoft.icon')
     block css
-      link(rel='stylesheet', href='/chrome_themes/umbra/s/chrometwo.css')
+      link(rel='stylesheet', href='https://access.redhat.com/chrome_themes/umbra/s/chrometwo.css')
       link(rel='stylesheet', href='css/style.css')
     block js
-      script(src='/webassets/avalon/j/lib/require.js')
-      script(src='http://localhost:35729/livereload.js')
+      script(src='https://access.redhat.com/webassets/avalon/j/lib/require.js')
+      if isDev
+        script(src='http://localhost:35729/livereload.js')
       if isAdmin
         script(src='js/app.js')
   body.labs

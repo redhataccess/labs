@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  .band.band-hero.band-hero-cover.band-hero-top(style='background-image: url(http://www.redhat.com/profiles/rh/themes/redhatdotcom/img/header/header-story-tech-industries-2000x1357.jpg);')
+  .band.band-hero.band-hero-cover.band-hero-top(style='background-image: url(img/bg_labs.jpg);')
     .container
       .hero
         p.headline.headline-white Labs
@@ -11,7 +11,7 @@ block content
               |, enabling continuous delivery and continuous innovation.
         p.strapline.strapline-white We invite you to try these tools and tell us what you think. As our customer community collaborates and offers feedback, 
           | these applications will grow and change quickly. Get started here with the featured labs below!
-  .band.band-hero.band-hero-cover.band-hero-top.inverse.labs(style='background-image: url(http://www.redhat.com/profiles/rh/themes/redhatdotcom/img/bkgd/bkgd-ltc-wispy_sky_2-2000x680.jpg);')
+  .band.band-hero.band-hero-cover.band-hero-top.inverse.labs(style='background-image: url(img/bg_sky.jpg);')
     .container
       .hero
         if featured.length
@@ -27,7 +27,7 @@ block content
           .row
             each lab in featured
               include _lab.jade
-  .band.band-hero.band-hero-cover.band-hero-top.inverse.labs(style='background-image: url(http://www.redhat.com/cms/public/Open_Hybrid_Cloud.jpg);')
+  .band.band-hero.band-hero-cover.band-hero-top.inverse.labs(style='background-image: url(img/bg_featured.jpg);')
     .container
       .hero
         if labs.length

@@ -10,8 +10,6 @@ var xml2js = require('xml2js'),
 // Init DB connection and require models
 require('../../db');
 var Lab = mongoose.model('Lab');
-var allLabs = [],
-  featuredLabs = [];
 
 function parse(xml) {
   var deferred = Q.defer();
@@ -31,7 +29,7 @@ function parse(xml) {
   return deferred.promise;
 }
 
-function save() {
+function save(labs) {
   // Clear out existing labs
   Lab.collection.remove({}, function(err) {
     if (err) {
@@ -43,7 +41,7 @@ function save() {
     // so far so good
     console.log('Labs dropped.');
     // Bulk insert our labs
-    Lab.collection.insert(allLabs, function(err, labs) {
+    Lab.collection.insert(labs, function(err, labs) {
       if (err) {
         // Failboat
         console.log('Error saving labs?');
@@ -56,54 +54,33 @@ function save() {
   });
 }
 
-function featured() {
-  var deferred = Q.defer();
-  request.get({
-    url: 'https://access.redhat.com/feeds/labinfo/featured',
-    strictSSL: false
-  }, function(error, response, body) {
-    if (!error && response.statusCode === 200) {
-      parse(body)
-        .then(function(labs) {
-          labs.forEach(function(lab) {
-            featuredLabs.push(lab.title);
-          });
-          deferred.resolve();
-        });
-    }
-  });
-  return deferred.promise;
-}
-
 function all() {
   var deferred = Q.defer();
   request.get({
-    url: 'https://access.redhat.com/feeds/labinfo',
+    url: 'https://access.devgssfte.devlab.phx1.redhat.com/feeds/labinfo',
     strictSSL: false
   }, function(error, response, body) {
     if (!error && response.statusCode === 200) {
+      var parsedLabs = [];
       parse(body)
         .then(function(labs) {
           labs.forEach(function(lab) {
-            // Our parsing of each lab
-            var matches = lab.link.match(/\/labsinfo\/(.*?)%/);
-            var lab_id = matches && matches[1],
-              title = lab.title,
-              featured = (featuredLabs.indexOf(title) !== -1);
-            allLabs.push({
-              name: title,
-              lab_id: lab_id,
+            parsedLabs.push({
+              name: lab.title,
+              lab_id: lab.id,
               description: lab.description,
-              version: lab.pubDate,
-              type: lab['dc:creator'],
-              isFeatured: featured
+              version: lab.version,
+              type: lab.type,
+              featured: lab.featured,
+              lang: lab.lang,
+              mostViewed: lab.featured
             });
           });
-          deferred.resolve();
+          deferred.resolve(parsedLabs);
         });
     }
   });
   return deferred.promise;
 }
 
-featured().then(all).then(save);
+all().then(save);

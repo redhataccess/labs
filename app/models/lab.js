@@ -9,6 +9,7 @@ var LabSchema = new Schema({
   version: String,
   type: String,
   description: String,
+  lang: String,
   featured: {
     type: Boolean,
     default: false
