@@ -4,6 +4,7 @@ var glob = require('glob');
 
 var logger = require('morgan');
 var compress = require('compression');
+var cookieParser = require('cookie-parser');
 
 module.exports = function(app, config) {
   app.set('views', config.root + '/app/views');
@@ -11,6 +12,7 @@ module.exports = function(app, config) {
 
   app.use(logger('dev'));
   app.use(compress());
+  app.use(cookieParser());
   app.use(express.static(config.root + '/public'));
   var oneDay = 86400000;
   app.use('/labs/labs', express.static(config.root + '/public', { maxAge: oneDay }));
