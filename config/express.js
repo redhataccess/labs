@@ -12,7 +12,8 @@ module.exports = function(app, config) {
   app.use(logger('dev'));
   app.use(compress());
   app.use(express.static(config.root + '/public'));
-  app.use('/labs/labs', express.static(config.root + '/public', { maxAge: 432000 }));
+  var oneDay = 86400000;
+  app.use('/labs/labs', express.static(config.root + '/public', { maxAge: oneDay }));
 
   // Pull in controllers
   glob.sync(config.root + '/app/controllers/*.js').forEach(function(controller) {
