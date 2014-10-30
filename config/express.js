@@ -12,8 +12,7 @@ module.exports = function(app, config) {
   app.use(logger('dev'));
   app.use(compress());
   app.use(express.static(config.root + '/public'));
-  app.use('/labs/labs', express.static(config.root + '/public/img', { maxAge: 432000 }));
-  app.use('/labs/labs', express.static(config.root + '/public'));
+  app.use('/labs/labs', express.static(config.root + '/public', { maxAge: 432000 }));
 
   // Pull in controllers
   glob.sync(config.root + '/app/controllers/*.js').forEach(function(controller) {
