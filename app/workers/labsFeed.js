@@ -57,7 +57,7 @@ function save(labs) {
 function all() {
   var deferred = Q.defer();
   request.get({
-    url: 'https://access.devgssfte.devlab.phx1.redhat.com/feeds/labinfo',
+    url: 'https://access.devgssci.devlab.phx1.redhat.com/feeds/labinfo',
     strictSSL: false
   }, function(error, response, body) {
     if (!error && response.statusCode === 200) {
