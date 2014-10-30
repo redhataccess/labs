@@ -12,6 +12,7 @@ module.exports = function(app, config) {
   app.use(logger('dev'));
   app.use(compress());
   app.use(express.static(config.root + '/public'));
+  app.use('/labs/labs', express.static(config.root + '/public/img', { maxAge: 432000 }));
   app.use('/labs/labs', express.static(config.root + '/public'));
 
   // Pull in controllers
