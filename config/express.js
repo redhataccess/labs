@@ -6,6 +6,9 @@ var express      = require('express'),
     cookieParser = require('cookie-parser'),
     compress     = require('compression');
 
+process.env.COOKIE_AUTH_DOMAIN = 'https://access.devgssci.devlab.phx1.redhat.com';
+process.env.COOKIE_AUTH_URL = 'https://access.devgssci.devlab.phx1.redhat.com/services/user/status?jsoncallback=';
+
 
 module.exports = function(app, config) {
     var oneDay = 86400000;

@@ -16,7 +16,9 @@
     "q": "~1.0.1",
     "request": "~2.45.0",
     "xml2js": "~0.4.4",
-    "lodash": "~2.4.1"
+    "lodash": "~2.4.1",
+    "rh-node-utils": "~0.0.x",
+    "xml2js": "~0.4.4"
   },
   "devDependencies": {
     "grunt": "~0.4.5",

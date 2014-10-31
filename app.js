@@ -8,4 +8,6 @@ var express = require('express'),
 require('./db');
 require('./config/express')(app, config);
 
+process.env.COOKIE_AUTH_DOMAIN = 'https://access.devgssci.devlab.phx1.redhat.com';
+process.env.COOKIE_AUTH_URL = 'https://access.devgssci.devlab.phx1.redhat.com/services/user/status?jsoncallback=';
 app.listen(config.port, config.ip);
