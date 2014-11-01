@@ -4,6 +4,7 @@ var express      = require('express'),
     glob         = require('glob'),
     logger       = require('morgan'),
     cookieParser = require('cookie-parser'),
+    bodyParser   = require('body-parser'),
     compress     = require('compression');
 
 process.env.COOKIE_AUTH_DOMAIN = 'https://access.devgssci.devlab.phx1.redhat.com';
@@ -19,6 +20,7 @@ module.exports = function(app, config) {
     app.use(logger('dev'));
     app.use(compress());
     app.use(cookieParser());
+    app.use(bodyParser.json());
     app.use(express.static(config.root + '/public'));
     app.use('/labs/labs', express.static(config.root + '/public', { maxAge: oneDay }));
 

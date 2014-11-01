@@ -15,12 +15,6 @@
         a(href='/labs/#{lab.lab_id}/') Go to App
       .col-md-6.col-border.col-border-left
         a(href='/labsinfo/#{lab.lab_id}/') More info
-    .actions
-      label.checkbox-inline
-        input(type='checkbox', value='featured', checked=lab.featured)
-        | Featured
-      label.checkbox-inline
-        input(type='checkbox', value='mostviewed', checked=lab.mostViewed)
-        | Most Viewed
+    include _actions.jade
 
 

@@ -11,21 +11,21 @@ block content
               |, enabling continuous delivery and continuous innovation.
         p.strapline.strapline-white We invite you to try these tools and tell us what you think. As our customer community collaborates and offers feedback, 
           | these applications will grow and change quickly. Get started here with the featured labs below!
-  .band.band-hero.band-hero-cover.band-hero-top.inverse.labs(style='background-image: url(/labs/labs/img/bg_sky.jpg);')
-    .container
-      .hero
-        if featured.length
+  if featured.length
+    .band.band-hero.band-hero-cover.band-hero-top.inverse.labs(style='background-image: url(/labs/labs/img/bg_sky.jpg);')
+      .container
+        .hero
           h2.section-title.section-title-red Featured Apps
           .row
             each lab in featured
               include _lab.jade
-  .band.labs
-    .container
-      .hero
-        if featured.length
+  if mostViewed.length
+    .band.labs
+      .container
+        .hero
           h2.section-title.section-title-red Most Viewed Apps
           .row
-            each lab in featured
+            each lab in mostViewed
               include _lab.jade
   .band.band-hero.band-hero-cover.band-hero-top.inverse.labs(style='background-image: url(/labs/labs/img/bg_featured.jpg);')
     .container
@@ -35,5 +35,6 @@ block content
           .row
             each lab in labs
               include _lab.jade
-  .btn.btn-primary.btn-admin
-    | SAVE
+  if isAdmin
+    .btn.btn-primary.btn-admin(onclick="update_labs()")
+      | SAVE

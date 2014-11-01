@@ -1,23 +1,17 @@
 'use strict';
 
 var mongoose = require('mongoose'),
-  Schema = mongoose.Schema;
+    Schema = mongoose.Schema;
 
 var LabSchema = new Schema({
-  name: String,
-  lab_id: String,
-  version: String,
-  type: String,
-  description: String,
-  lang: String,
-  featured: {
-    type: Boolean,
-    default: false
-  },
-  mostViewed: {
-    type: Boolean,
-    default: false
-  }
+    name: String,
+    lab_id: String,
+    version: String,
+    type: String,
+    description: String,
+    lang: String,
+    featured: Boolean,
+    mostViewed: Boolean
 });
 
-mongoose.model('Lab', LabSchema);
+module.exports = mongoose.model('Lab', LabSchema);

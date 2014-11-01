@@ -3,10 +3,9 @@
 
 var express  = require('express'),
     router   = express.Router(),
-    mongoose = require('mongoose'),
-    isDev    = false,
     lodash   = require('lodash'),
-    Lab      = mongoose.model('Lab');
+    Lab      = require('../models/lab'),
+    isDev    = false;
 
 
 module.exports = function(app) {
@@ -44,7 +43,10 @@ router.get('/labs/', function(req, res, next) {
         }
 
         var featured = labs.filter(function(lab) {
-            return lab.featured === '1';
+            return lab.featured;
+        });
+        var mostViewed = labs.filter(function(lab) {
+            return lab.mostViewed;
         });
 
         var isAdmin = (typeof req.query.admin !== 'undefined');
@@ -52,6 +54,7 @@ router.get('/labs/', function(req, res, next) {
         res.render('index', {
             title: 'Labs - Red Hat Customer Portal',
             featured: featured,
+            mostViewed: mostViewed,
             labs: labs,
             isAdmin: isAdmin,
             isDev: isDev
