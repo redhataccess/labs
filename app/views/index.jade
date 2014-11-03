@@ -27,14 +27,17 @@ block content
           .row
             each lab in mostViewed
               include _lab.jade
-  .band.band-hero.band-hero-cover.band-hero-top.inverse.labs(style='background-image: url(/labs/labs/img/bg_featured.jpg);')
+  .band.band-hero.band-hero-cover.band-hero-top.inverse.labs.all-labs(style='background-image: url(/labs/labs/img/bg_featured.jpg);')
     .container
       .hero
-        if labs.length
-          h2.section-title.section-title-red All Apps
-          .row
-            each lab in labs
-              include _lab.jade
+        .btn-group.pull-right.labs-filter
+          button.btn.btn-default.btn-sm(type='button', data-type='diagnostics') D
+          button.btn.btn-default.btn-sm(type='button', data-type='performance') P
+          button.btn.btn-default.btn-sm(type='button', data-type='security') S
+        h2.section-title.section-title-red All Apps
+        .row
+          each lab in labs
+            include _lab.jade
   if isAdmin
     .btn.btn-primary.btn-admin
       | SAVE

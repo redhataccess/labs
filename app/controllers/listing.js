@@ -15,7 +15,7 @@ module.exports = function(app) {
     app.use('/', router);
 };
 
-router.get(['/', '/labs/'], function(req, res, next) {
+router.get(['/', '/labs'], function(req, res, next) {
     var my_lang = req.cookies.rh_locale,
         langs = { en : 'en' };
 

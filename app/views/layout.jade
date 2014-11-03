@@ -10,19 +10,12 @@ html.no-js.bootstrap3.nimbus.chrometwo.legacyfalse(lang='en')
       link(rel='stylesheet', href='/labs/labs/css/style.css')
     block js
       script(src='/webassets/avalon/j/lib/require.js')
+      script(src='/labs/labs/js/app.js')
       if isDev
         script(src='http://localhost:35729/livereload.js')
       if isAdmin
-        script(src='/labs/labs/js/app.js')
+        script(src='/labs/labs/js/admin.js')
   body.labs
     #chrometwo(style='display: none;')
       #main
         block content
-
-  script.
-    window.breadcrumbs = [
-      ['Labs', '/labs']
-    ];
-    window.chrometwo_require(['jquery'], function(jq) {
-        jq('#chrometwo').show();
-    });

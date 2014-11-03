@@ -6,6 +6,10 @@
   padding-bottom: 30px;
 }
 
+.labs .breadcrumbs {
+  display: none;
+}
+
 .labs .card {
   padding: 0;
   height: 275px;
@@ -78,11 +82,6 @@
   color: #fff;
 }
 
-.labs .band.labs {
-  padding: 40px 0;
-  padding: 1.3rem 0;
-}
-
 .inverse .card .section-title,
 .inverse .card a.card--link,
 .inverse .card {
@@ -118,4 +117,16 @@
 
 a.card--link {
   text-decoration: none;
+}
+
+.types-diagnostics .all-labs .lab,
+.types-performance .all-labs .lab,
+.types-security .all-labs .lab {
+    display: none;
+}
+
+.types-diagnostics .all-labs .lab.diagnostics,
+.types-performance .all-labs .lab.performance,
+.types-security .all-labs .lab.security {
+    display: block;
 }
