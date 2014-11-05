@@ -41,7 +41,7 @@
       $scope.filterLabs = function() {
         var type = this.labTypeFilter;
         var search = {
-          type: type
+          type: type || ''
         };
         if (type === null) {
           $scope.labsTitle = 'All';
