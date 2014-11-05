@@ -77,7 +77,7 @@
           // Filtered labs - mixin featured and mostViewed
           labs = labs.concat($scope.featured, $scope.mostViewed);
         }
-        $http.post('/labs/labs', labs).success(function(labs) {
+        $http.post('/labs/labs/', labs).success(function(labs) {
           loaded_labs = labs;
           initScope($scope, $filter, $location, labs);
         });
