@@ -57,11 +57,11 @@
         window.deps.push("app/labs/labs.controller");
         <!-- endinjector -->
       <!-- endbuild -->
+      <!-- build:js({.tmp,client}) app/shims.js -->
+        /*<script src="bower_components/es5-shim/es5-shim.js"/>*/
+        /*<script src="bower_components/json3/lib/json3.min.js"/>*/
+      <!-- endbuild -->
     </script>
-    <!-- build:js({.tmp,client}) app/shims.js -->
-      <script src="bower_components/es5-shim/es5-shim.js"></script>
-      <script src="bower_components/json3/lib/json3.min.js"></script>
-    <!-- endbuild -->
     <!-- @endif -->
     <script type="text/javascript" src="loader.js?bust=0.0.1"></script>
     <!-- build:css(client) app/vendor.css -->
