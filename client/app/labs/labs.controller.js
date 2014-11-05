@@ -40,7 +40,7 @@
       $scope.isAdmin = false;
       $scope.filterLabs = function() {
         var type = this.labTypeFilter;
-        //var search = {};
+        var search = {};
         if (type === null) {
           $scope.labsTitle = 'All';
           focusHack();
@@ -52,10 +52,10 @@
           } else if (type === 'performance') {
             $scope.labsTitle = 'Performance';
           }
-          //search.type = type;
+          search.type = type;
         }
-        // $location.replace();
-        // $location.search(search);
+        $location.replace();
+        $location.search(search);
         $scope.labsTitle += ' Apps';
       };
       $scope.toggleAdmin = function() {
