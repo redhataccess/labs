@@ -6,7 +6,11 @@
     'use strict';
 
     if (!window.LABS_DEBUG) {
-      window.deps = ['app/vendor.js?bust=0.0.1', 'app/app.js?bust=0.0.1'];
+      window.deps = [];
+      if (window.LT_IE_9) {
+        window.deps.push('app/shims.js?bust=0.0.1');
+      }
+      window.deps.push('app/vendor.js?bust=0.0.1', 'app/app.js?bust=0.0.1');
     }
 
     window.require.config({

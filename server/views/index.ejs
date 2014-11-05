@@ -12,6 +12,12 @@
               var baseTag = document.getElementsByTagName('base')[0];
               baseTag.href = baseTag.href;
           })();
+          window.IE;
+      </script>
+    <![endif]-->
+    <!--[if lt IE 9]>
+      <script type="text/javascript">
+        window.LT_IE_9 = true;
       </script>
     <![endif]-->
     <title>Labs - Red Hat Customer Portal</title>
@@ -52,6 +58,10 @@
         <!-- endinjector -->
       <!-- endbuild -->
     </script>
+    <!-- build:js({.tmp,client}) app/shims.js -->
+      <script src="bower_components/es5-shim/es5-shim.js"></script>
+      <script src="bower_components/json3/lib/json3.min.js"></script>
+    <!-- endbuild -->
     <!-- @endif -->
     <script type="text/javascript" src="loader.js?bust=0.0.1"></script>
     <!-- build:css(client) app/vendor.css -->
@@ -73,11 +83,6 @@
         </div>
       </div>
     </div>
-
-    <!--[if lt IE 9]>
-    <script src="bower_components/es5-shim/es5-shim.js"></script>
-    <script src="bower_components/json3/lib/json3.min.js"></script>
-    <![endif]-->
 
 </body>
 </html>
