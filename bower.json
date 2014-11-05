@@ -1,9 +1,17 @@
 {
   "name": "labs",
   "version": "0.0.1",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "components"
-  ]
+  "dependencies": {
+    "json3": "~3.3.1",
+    "es5-shim": "~3.0.1",
+    "angular-preloaded": "~0.1.0",
+    "angular-mousetrap": "~1.0.0",
+    "mousetrap": "~1.4.6",
+    "angular": "1.2.8",
+    "angular-animate": "1.2.8"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.2.8",
+    "angular-scenario": "1.2.8"
+  }
 }

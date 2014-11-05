@@ -1,0 +1,165 @@
+//colors
+$black: #000;
+$white: #fff;
+$color_shark: #252527;
+$color_mountain_mist: #999;
+$color_boston_blue: #428bca;
+
+%card-elements {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
+
+.main-content {
+  padding: 0 !important;
+}
+.labs {
+  .col-md-4 {
+    padding-bottom: 30px;
+  }
+  .breadcrumbs {
+    display: none;
+  }
+  .card {
+    padding: 0;
+    height: 275px;
+    position: relative;
+    .content {
+      padding: 30px;
+      padding: 1.875rem;
+      padding-bottom: 0;
+    }
+    .actions {
+      @extend %card-elements;
+      display: none;
+      bottom: -25px;
+    }
+    .links {
+      @extend %card-elements;
+      bottom: 10px;
+    }
+  }
+}
+.admin {
+  .btn-admin {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    z-index: 2;
+    width: 100%;
+  }
+  .labs .card .actions {
+    display: block;
+    color: $black;
+  }
+  .actions .checkbox-inline input {
+    margin: -7px 0 0 -15px;
+  }
+}
+.btn-admin {
+  display: none;
+}
+.card {
+  color: $white;
+  .section-title {
+    color: #FFF;
+    color: $white;
+  }
+  .meta {
+    height: 40px;
+    width: 100%;
+    .icon {
+      display: inline-block;
+      height: 100%;
+    }
+    .version {
+      display: inline-block;
+      height: 100%;
+    }
+  }
+  .card--link {
+    display: block;
+    height: 85%;
+    color: $white;
+  }
+  .version-number {
+    font-size: 25px;
+    font-size: 1.5625rem;
+    line-height: 35.275px;
+    line-height: 2.20469rem;
+    text-transform: none;
+    font-weight: 200;
+  }
+  .version * {
+    color: $white;
+  }
+  a.card--link:hover .lab-name {
+    color: $color_boston_blue;
+  }
+}
+[class^="labs-icon-"] {
+  font-size: 30px;
+  font-weight: bold;
+}
+.inverse .card {
+  background: $white;
+  color: $color_shark;
+  .section-title {
+    background: $white;
+    color: $color_shark;
+  }
+  a.card--link {
+    background: $white;
+    color: $color_shark;
+  }
+  .version * {
+    color: $color_mountain_mist;
+  }
+}
+a.card--link {
+  text-decoration: none;
+}
+.types-diagnostics .all-labs .lab {
+  display: none;
+  &.diagnostics {
+    display: block;
+  }
+}
+.types-performance .all-labs .lab {
+  display: none;
+  &.performance {
+    display: block;
+  }
+}
+.types-security .all-labs .lab {
+  display: none;
+  &.security {
+    display: block;
+  }
+}
+
+.animateng-move,
+.animate.ng-enter,
+.animate.ng-leave {
+  -webkit-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -moz-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -ms-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -o-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+}
+
+.animate.ng-leave.ng-leave-active,
+.animate.ng-move,
+.animate.ng-enter {
+  opacity:0;
+  height: 0px;
+}
+
+.animate.ng-leave,
+.animate.ng-move.ng-move-active,
+.animate.ng-enter.ng-enter-active {
+  opacity:1;
+  height: 275px;
+}

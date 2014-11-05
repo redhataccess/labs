@@ -1,0 +1,15 @@
+
+.reveal-animation.ng-enter {
+  -webkit-transition: 1s linear all;
+  transition: 1s linear all;
+  opacity: 0;
+}
+
+.reveal-animation.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+// Component styles are injected through grunt
+// injector
+@import 'labs/labs.scss';
+// endinjector

@@ -1,0 +1,38 @@
+.band.band-hero.band-hero-cover.band-hero-top(style='background-image: url(assets/images/bg_labs.jpg);', mousetrap-keypress="keys")
+  .container
+    .hero
+      p.headline.headline-white Labs
+      p.strapline.strapline-white To help you use Red Hat products to their full potential, our engineers have developed a set of tools within Red Hat Access Labs to support customer success. 
+            | Red Hat Access Labs is built on 
+            a(href='https://access.redhat.com/products/openshift-enterprise-red-hat/') OpenShift Enterprise
+            |, enabling continuous delivery and continuous innovation.
+      p.strapline.strapline-white We invite you to try these tools and tell us what you think. As our customer community collaborates and offers feedback, 
+        | these applications will grow and change quickly. Get started here with the featured labs below!
+.band.band-hero.band-hero-cover.band-hero-top.inverse.labs(ng-show='featured.length', style='background-image: url(assets/images/bg_sky.jpg);')
+  .container
+    .hero
+      h2.section-title.section-title-red Featured Apps
+      .row
+        .col-md-4.col-sm-6.lab(ng-repeat='lab in featured track by lab.id')
+          div(ng-include='"app/labs/views/_lab.html"')
+.band.labs(ng-show='mostViewed.length')
+  .container
+    .hero
+      h2.section-title.section-title-red Most Viewed Apps
+      .row
+        .col-md-4.col-sm-6.lab(ng-repeat='lab in mostViewed track by lab.id')
+          div(ng-include='"app/labs/views/_lab.html"')
+.band.band-hero.band-hero-cover.band-hero-top.inverse.labs.all-labs(style='background-image: url(assets/images/bg_featured.jpg);')
+  .container
+    .hero
+      .btn-group.pull-right.labs-filter
+        button.btn.btn-default.btn-sm(ng-model='labTypeFilter', btn-radio='"diagnostics"', uncheckable='', ng-change='filterLabs()') D
+        button.btn.btn-default.btn-sm(ng-model='labTypeFilter', btn-radio='"performance"', uncheckable='', ng-change='filterLabs()') P
+        button.btn.btn-default.btn-sm(ng-model='labTypeFilter', btn-radio='"security"', uncheckable='', ng-change='filterLabs()') S
+
+      h2.section-title.section-title-red {{labsTitle}}
+      .row
+        .col-md-4.col-sm-6.lab.animate(ng-repeat='lab in labs | filter:labTypeFilter && {type: labTypeFilter} track by lab.id')
+          div(ng-include='"app/labs/views/_lab.html"')
+  .btn.btn-primary.btn-admin.btn-lg(ng-disabled='!isAdmin', ng-click='updateLabs()')
+    | SAVE

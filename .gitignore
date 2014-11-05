@@ -1,4 +1,8 @@
-node_modules/
-public/bower_components
+node_modules
+bower_components
+public
+.tmp
 .sass-cache
-.travis/id_prod.pub
+.idea
+dist
+npm-debug.log

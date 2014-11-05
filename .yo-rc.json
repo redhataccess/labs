@@ -1,0 +1,40 @@
+{
+  "generator-angular-fullstack": {
+    "insertRoutes": true,
+    "registerRoutesFile": "server/routes.js",
+    "routesNeedle": "// Insert routes below",
+    "routesBase": "/api/",
+    "pluralizeRoutes": true,
+    "filters": {
+      "js": true,
+      "jade": true,
+      "sass": true,
+      "uirouter": true,
+      "mongoose": true
+    }
+  },
+  "generator-ng-component": {
+    "routeDirectory": "client/app/",
+    "directiveDirectory": "client/app/",
+    "filterDirectory": "client/app/",
+    "serviceDirectory": "client/app/",
+    "basePath": "client",
+    "filters": [
+      "uirouter"
+    ],
+    "extensions": [
+      "js",
+      "jade",
+      "scss"
+    ],
+    "directiveSimpleTemplates": "",
+    "directiveComplexTemplates": "",
+    "filterTemplates": "",
+    "serviceTemplates": "",
+    "factoryTemplates": "",
+    "controllerTemplates": "",
+    "decoratorTemplates": "",
+    "providerTemplates": "",
+    "routeTemplates": ""
+  }
+}
