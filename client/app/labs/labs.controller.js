@@ -40,7 +40,9 @@
       $scope.isAdmin = false;
       $scope.filterLabs = function() {
         var type = this.labTypeFilter;
-        var search = {};
+        var search = {
+          type: type
+        };
         if (type === null) {
           $scope.labsTitle = 'All';
           focusHack();
@@ -52,7 +54,6 @@
           } else if (type === 'performance') {
             $scope.labsTitle = 'Performance';
           }
-          search.type = type;
         }
         $location.replace();
         $location.search(search);
