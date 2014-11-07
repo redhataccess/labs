@@ -7,6 +7,7 @@
 module.exports = function(app) {
 
   // Insert routes below
+  app.use('/', require('./api/lab'));
   app.use('/labs/', require('./api/lab'));
 
   // All undefined asset or api routes should return a 404
