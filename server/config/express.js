@@ -26,6 +26,7 @@ module.exports = function(app) {
   app.use(bodyParser.json());
   app.use(cookieParser());
   if ('production' === env) {
+    app.use('/labs/', express.static(path.join(config.root, 'public')));
     app.use('/labs/labs/', express.static(path.join(config.root, 'public')));
     app.set('appPath', config.root + '/public');
     app.use(morgan('dev'));
