@@ -1,4 +1,4 @@
-.band.band-hero.band-hero-cover.band-hero-top(style='background-image: url(assets/images/bg_labs.jpg);', mousetrap-keypress="keys")
+.band.band-hero.band-hero-cover.band-hero-top(style='background-image: url(assets/images/bg_labs.jpg?bust1);', mousetrap-keypress="keys")
   .container
     .hero
       p.headline.headline-white Labs
@@ -8,7 +8,7 @@
             |, enabling continuous delivery and continuous innovation.
       p.strapline.strapline-white We invite you to try these tools and tell us what you think. As our customer community collaborates and offers feedback, 
         | these applications will grow and change quickly. Get started here with the featured labs below!
-.band.band-hero.band-hero-cover.band-hero-top.inverse.labs(ng-show='featured.length', style='background-image: url(assets/images/bg_sky.jpg);')
+.band.band-hero.band-hero-cover.band-hero-top.inverse.labs(ng-show='featured.length', style='background-image: url(assets/images/bg_sky.jpg?bust1);')
   .container
     .hero
       h2.section-title.section-title-red Featured Apps
@@ -22,7 +22,7 @@
       .row
         .col-md-4.col-sm-6.lab(ng-repeat='lab in mostViewed track by lab.id')
           div(ng-include='"app/labs/views/_lab.html"')
-.band.band-hero.band-hero-cover.band-hero-top.inverse.labs.all-labs(style='background-image: url(assets/images/bg_featured.jpg);')
+.band.band-hero.band-hero-cover.band-hero-top.inverse.labs.all-labs(style='background-image: url(assets/images/bg_featured.jpg?bust1);')
   .container
     .hero
       .btn-group.pull-right.labs-filter
