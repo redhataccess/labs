@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'labs-home';
-  src:url('fonts/labs-home.eot?-qvs8ao');
-  src:url('fonts/labs-home.eot?#iefix-qvs8ao') format('embedded-opentype'),
-  url('fonts/labs-home.woff?-qvs8ao') format('woff'),
-  url('fonts/labs-home.ttf?-qvs8ao') format('truetype'),
-  url('fonts/labs-home.svg?-qvs8ao#icomoon') format('svg');
+  src:url('/assets/fonts/labs-home.eot?-qvs8ao');
+  src:url('/assets/fonts/labs-home.eot?#iefix-qvs8ao') format('embedded-opentype'),
+  url('/assets/fonts/labs-home.woff?-qvs8ao') format('woff'),
+  url('/assets/fonts/labs-home.ttf?-qvs8ao') format('truetype'),
+  url('/assets/fonts/labs-home.svg?-qvs8ao#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,14 +24,18 @@
 }
 
 .icon-config:before {
+  font-family: 'labs-home';
   content: "\e5f9";
 }
 .icon-deploy:before {
+  font-family: 'labs-home';
   content: "\e601";
 }
 .icon-security:before {
+  font-family: 'labs-home';
   content: "\e602";
 }
 .icon-troubleshoot:before {
+  font-family: 'labs-home';
   content: "\e603";
 }

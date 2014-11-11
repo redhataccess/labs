@@ -9,6 +9,23 @@ $color_boston_blue: #428bca;
 
 .top-page-wrap { background-image: url("../assets/images/bg_labs.jpg"); }
 
+.all-labs {
+  background-image: url("../assets/images/bg_all-labs.jpg");
+  background-color: #f5f5f5;
+}
+
+.band {
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+.band-white { background: #fff; }
+
+.featured-apps {
+  background-image: url("../assets/images/bg_featured.jpg");
+  background-repeat: no-repeat;
+}
+
 %card-elements {
   position: absolute;
   text-align: center;
