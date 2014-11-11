@@ -1,24 +1,23 @@
-# Red Hat Labs Angular
+# Red Hat Access labs
 
 ## Setup
 
 ```bash
-rhc create-app <app name> "http://cartreflect-claytondev.rhcloud.com/reflect?github=connyay/openshift-node-diy"
+mongod
 ```
 
 ```bash
-cd <app name>
+npm install
 ```
 
 ```bash
-./init.sh -r connyay/rh-labs-angular -t 1.0.2 -n <app name>
+bower install
 ```
 
-## Local Development
+```bash
+node server/feed.js
+```
 
-1. Setup [accesslabsproxy](https://github.com/connyay/accesslabsproxy).
-2. In a terminal start the proxy with `accesslabsproxy`
-3. In another terminal navigate to your apps directory and run the following commands
-  - `npm install`
-  - `bower install`
-  - `grunt serve`
+```bash
+grunt
+```
