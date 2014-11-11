@@ -5,12 +5,23 @@ $color_shark: #252527;
 $color_mountain_mist: #999;
 $color_boston_blue: #428bca;
 
+.portal-content-area, .main-content { background-color: transparent; }
+
+.top-page-wrap { background-image: url("../assets/images/bg_labs.jpg"); }
+
 %card-elements {
   position: absolute;
   text-align: center;
   width: 100%;
 }
 
+.band-hero {
+  background: none;
+}
+
+.masthead {
+	background: none;
+}
 
 .main-content {
   padding: 0 !important;
