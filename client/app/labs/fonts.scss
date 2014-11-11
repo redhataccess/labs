@@ -23,19 +23,20 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-config:before {
+.configuration, .icon-config:before {
   font-family: 'labs-home';
   content: "\e5f9";
 }
-.icon-deploy:before {
+.deployment, .icon-deploy:before {
   font-family: 'labs-home';
   content: "\e601";
 }
-.icon-security:before {
+.troubleshooting, .icon-security:before {
   font-family: 'labs-home';
   content: "\e602";
 }
-.icon-troubleshoot:before {
+.security, .icon-troubleshoot:before {
   font-family: 'labs-home';
   content: "\e603";
 }
+
