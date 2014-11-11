@@ -23,3 +23,6 @@ node server/feed.js
 ```bash
 grunt
 ```
+
+Open:  
+https://foo.redhat.com:1337/labs
