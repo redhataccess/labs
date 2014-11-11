@@ -10,8 +10,7 @@
 }
 
 // Component styles are injected through grunt
-// injector
-@import 'labs/fonts.scss';
-@import 'labs/labs.scss';
-// endinjector
+@import 'labs/_includes.scss';
+@import 'labs/_fonts.scss';
+@import 'labs/_labs.scss';
 

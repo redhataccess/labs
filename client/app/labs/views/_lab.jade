@@ -1,12 +1,11 @@
 .card
   a.card--link(href='/labs/{{lab.lab_id}}/')
+    .head
+      div(class='labs-icon-{{lab.type}}')
+      div.version
+        strong v
+        span.h2.section-title.version-number {{lab.version}}
     .content
-      .meta
-        span.icon
-           span(class='labs-icon-{{lab.type}}')
-        span.version.pull-right
-          strong v 
-          span.h2.section-title.version-number {{lab.version}}
       h2.section-title.lab-name {{lab.name}}
       p {{lab.description}}
   .links

@@ -20,17 +20,45 @@ $color_boston_blue: #428bca;
 }
 
 .labs-filter {
+
   [class^="icon-"], [class*=" icon-"] {
     float: left;
     font-size: 54px;
   }
 }
 
+.labs-home {
+
+  [class^="labs-icon-"] {
+    font-size: 44px;
+  }
+}
+
+.labs-icon-configuration:before, .icon-config:before {
+  content: "\e5f9";
+  color: #3f9c35;
+}
+.labs-icon-deployment:before, .icon-deploy:before {
+  content: "\e601";
+  color: #0085cf;
+}
+.labs-icon-troubleshooting:before, .icon-troubleshoot:before {
+  content: "\e602";
+  color: #ec7a08;
+}
+.labs-icon-security:before, .icon-security:before {
+  content: "\e603";
+  color: #cc0000;
+}
+
+
 .band-white { background: #fff; }
 
 .featured-apps {
   background-image: url("../assets/images/bg_featured.jpg");
   background-repeat: no-repeat;
+  background-position: bottom center;
+  background-color: #efefef;
 }
 
 %card-elements {
@@ -51,26 +79,41 @@ $color_boston_blue: #428bca;
   padding: 0 !important;
 }
 .labs {
-  .col-md-4 {
-    padding-bottom: 30px;
-  }
-  .breadcrumbs {
-    display: none;
-  }
+
+  .col-md-4 { padding-bottom: 30px; }
+  .breadcrumbs { display: none; }
+
   .card {
     padding: 0;
     height: 275px;
     position: relative;
+
+    .head {
+      @extend %clearfix;
+      padding: 30px;
+      padding-bottom: 0;
+
+      [class^="labs-icon-"] {
+        float: left;
+      }
+
+      .version {
+        float: right;
+      }
+    }
+
     .content {
       padding: 30px;
       padding: 1.875rem;
-      padding-bottom: 0;
+      padding-top: 12px;
     }
+
     .actions {
       @extend %card-elements;
       display: none;
       bottom: -25px;
     }
+
     .links {
       @extend %card-elements;
       bottom: 10px;

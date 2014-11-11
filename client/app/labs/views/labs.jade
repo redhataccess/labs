@@ -25,18 +25,20 @@
 .band.labs.all-labs.inverse
   .container
     .row
-      .btn-group.pull-right.labs-filter
-        .icon-config
-        .icon-deploy
-        .icon-security
-        .icon-troubleshoot
-        //button.btn.btn-default.btn-sm(ng-model='labTypeFilter', btn-radio='"diagnostics"', uncheckable='', ng-change='filterLabs()') D
-        //button.btn.btn-default.btn-sm(ng-model='labTypeFilter', btn-radio='"performance"', uncheckable='', ng-change='filterLabs()') P
-        //button.btn.btn-default.btn-sm(ng-model='labTypeFilter', btn-radio='"security"', uncheckable='', ng-change='filterLabs()') S
+      .col-xs-12
+        .btn-group.pull-right.labs-filter
+          .icon-config
+          .icon-deploy
+          .icon-security
+          .icon-troubleshoot
+          //button.btn.btn-default.btn-sm(ng-model='labTypeFilter', btn-radio='"diagnostics"', uncheckable='', ng-change='filterLabs()') D
+          //button.btn.btn-default.btn-sm(ng-model='labTypeFilter', btn-radio='"performance"', uncheckable='', ng-change='filterLabs()') P
+          //button.btn.btn-default.btn-sm(ng-model='labTypeFilter', btn-radio='"security"', uncheckable='', ng-change='filterLabs()') S
 
-      h2.section-title.section-title-red {{labsTitle}}
-      .row
-        .col-md-4.col-sm-6.lab.animate(ng-repeat='lab in labs | filter:labTypeFilter && {type: labTypeFilter} track by lab.id')
-          div(ng-include='"app/labs/views/_lab.html"')
+        h2.section-title.section-title-red {{labsTitle}}
+    .row
+      .col-md-4.col-sm-6.lab.animate(ng-repeat='lab in labs | filter:labTypeFilter && {type: labTypeFilter} track by lab.id')
+        div(ng-include='"app/labs/views/_lab.html"')
+
   .btn.btn-primary.btn-admin.btn-lg(ng-disabled='!isAdmin', ng-click='updateLabs()')
     | SAVE
