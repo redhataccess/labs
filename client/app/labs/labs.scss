@@ -19,6 +19,13 @@ $color_boston_blue: #428bca;
   background-repeat: no-repeat;
 }
 
+.labs-filter {
+  [class^="icon-"], [class*=" icon-"] {
+    float: left;
+    font-size: 54px;
+  }
+}
+
 .band-white { background: #fff; }
 
 .featured-apps {

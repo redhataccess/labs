@@ -24,15 +24,15 @@
           div(ng-include='"app/labs/views/_lab.html"')
 .band.labs.all-labs.inverse
   .container
-    .hero
+    .row
       .btn-group.pull-right.labs-filter
         .icon-config
         .icon-deploy
         .icon-security
         .icon-troubleshoot
-        button.btn.btn-default.btn-sm(ng-model='labTypeFilter', btn-radio='"diagnostics"', uncheckable='', ng-change='filterLabs()') D
-        button.btn.btn-default.btn-sm(ng-model='labTypeFilter', btn-radio='"performance"', uncheckable='', ng-change='filterLabs()') P
-        button.btn.btn-default.btn-sm(ng-model='labTypeFilter', btn-radio='"security"', uncheckable='', ng-change='filterLabs()') S
+        //button.btn.btn-default.btn-sm(ng-model='labTypeFilter', btn-radio='"diagnostics"', uncheckable='', ng-change='filterLabs()') D
+        //button.btn.btn-default.btn-sm(ng-model='labTypeFilter', btn-radio='"performance"', uncheckable='', ng-change='filterLabs()') P
+        //button.btn.btn-default.btn-sm(ng-model='labTypeFilter', btn-radio='"security"', uncheckable='', ng-change='filterLabs()') S
 
       h2.section-title.section-title-red {{labsTitle}}
       .row

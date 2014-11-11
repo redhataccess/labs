@@ -9,7 +9,7 @@
   font-style: normal;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+[class^="icon-"], [class*=" icon-"], [class^="labs-icon-"], [class*=" labs-icon-"] {
   font-family: 'labs-home';
   speak: none;
   font-style: normal;
@@ -23,20 +23,24 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.configuration, .icon-config:before {
+.labs-icon-configuration:before, .icon-config:before {
   font-family: 'labs-home';
   content: "\e5f9";
+  color: #3f9c35;
 }
-.deployment, .icon-deploy:before {
+.labs-icon-deployment:before, .icon-deploy:before {
   font-family: 'labs-home';
   content: "\e601";
+  color: #0085cf;
 }
-.troubleshooting, .icon-security:before {
+.labs-icon-troubleshooting:before, .icon-troubleshoot:before {
   font-family: 'labs-home';
   content: "\e602";
+  color: #ec7a08;
 }
-.security, .icon-troubleshoot:before {
+.labs-icon-security:before, .icon-security:before {
   font-family: 'labs-home';
   content: "\e603";
+  color: #cc0000;
 }
 
