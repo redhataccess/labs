@@ -27,13 +27,10 @@
     .row
       .col-xs-12
         .btn-group.pull-right.labs-filter
-          .icon-config
-          .icon-deploy
-          .icon-security
-          .icon-troubleshoot
-          //button.btn.btn-default.btn-sm(ng-model='labTypeFilter', btn-radio='"diagnostics"', uncheckable='', ng-change='filterLabs()') D
-          //button.btn.btn-default.btn-sm(ng-model='labTypeFilter', btn-radio='"performance"', uncheckable='', ng-change='filterLabs()') P
-          //button.btn.btn-default.btn-sm(ng-model='labTypeFilter', btn-radio='"security"', uncheckable='', ng-change='filterLabs()') S
+          button.icon-config.btn-reset(ng-model='labTypeFilter', btn-radio='"config"', uncheckable='', ng-change='filterLabs()')
+          button.icon-deploy.btn-reset(ng-model='labTypeFilter', btn-radio='"deploy"', uncheckable='', ng-change='filterLabs()')
+          button.icon-security.btn-reset(ng-model='labTypeFilter', btn-radio='"security"', uncheckable='', ng-change='filterLabs()')
+          button.icon-troubleshoot.btn-reset(ng-model='labTypeFilter', btn-radio='"troubleshoot"', uncheckable='', ng-change='filterLabs()')
 
         h2.section-title.section-title-red {{labsTitle}}
     .row
