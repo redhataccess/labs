@@ -2,7 +2,7 @@
   a.card--link(href='/labs/{{lab.lab_id}}/')
     .head
       div(class='labs-icon-{{lab.type}}')
-      div.version
+      div.version(ng-show="lab.version")
         strong v
         span.h2.section-title.version-number {{lab.version}}
     .content

@@ -77,7 +77,7 @@ function fetch() {
               name: lab.title,
               lab_id: lab.id,
               description: lab.description,
-              version: lab.version,
+              version: lab.version === 'Unknown' ? null : lab.version,
               type: lab.type,
               lang: lang
             });
