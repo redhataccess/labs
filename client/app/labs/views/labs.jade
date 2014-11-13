@@ -27,7 +27,7 @@
     .row
       .col-xs-12
         .btn-group.pull-right.labs-filter(ng-class="!labTypeFilter ? 'unfiltered': ''")
-          a.filter-reset(ng-class="!labTypeFilter ? 'hidden': ''") reset filters
+          a.filter-reset(ng-class="!labTypeFilter ? 'hidden': ''") clear filters
           button.icon-config.btn-reset(ng-model='labTypeFilter', btn-radio='"config"', uncheckable='', ng-change='filterLabs()')
           button.icon-deploy.btn-reset(ng-model='labTypeFilter', btn-radio='"deploy"', uncheckable='', ng-change='filterLabs()')
           button.icon-security.btn-reset(ng-model='labTypeFilter', btn-radio='"security"', uncheckable='', ng-change='filterLabs()')

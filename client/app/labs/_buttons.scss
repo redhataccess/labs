@@ -11,6 +11,15 @@ button.btn-reset, .btn.btn-reset, .btn-reset {
 
 .labs-filter {
 
+	&:hover {
+
+		button {
+			opacity: .5;
+		}
+	}
+
+	button:hover { opacity: 1; }
+
 	.filter-reset {
 		position: absolute;
 		right: 0;
@@ -29,7 +38,7 @@ button.btn-reset, .btn.btn-reset, .btn-reset {
 		transition-duration: .3s;
 	}
 
-	&.unfiltered { button { opacity: 1; } }
+
 	&:not(.unfiltered) {
 
 		button {
