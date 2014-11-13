@@ -8,7 +8,7 @@
             |, enabling continuous delivery and continuous innovation.
       p.strapline.strapline-white We invite you to try these tools and tell us what you think. As our customer community collaborates and offers feedback, 
         | these applications will grow and change quickly. Get started here with the featured labs below!
-.band.inverse.featured-apps(ng-show='featured.length')
+.band.inverse.labs.featured-apps(ng-show='featured.length')
   .container
     .hero
       h2.section-title.section-title-red Featured Apps
@@ -27,11 +27,11 @@
     .row
       .col-xs-12
         .btn-group.pull-right.labs-filter(ng-class="!labTypeFilter ? 'unfiltered': ''")
-          a.filter-reset(ng-class="!labTypeFilter ? 'hidden': ''") clear filters
-          button.icon-config.btn-reset(ng-model='labTypeFilter', btn-radio='"config"', uncheckable='', ng-change='filterLabs()')
-          button.icon-deploy.btn-reset(ng-model='labTypeFilter', btn-radio='"deploy"', uncheckable='', ng-change='filterLabs()')
-          button.icon-security.btn-reset(ng-model='labTypeFilter', btn-radio='"security"', uncheckable='', ng-change='filterLabs()')
-          button.icon-troubleshoot.btn-reset(ng-model='labTypeFilter', btn-radio='"troubleshoot"', uncheckable='', ng-change='filterLabs()')
+          .filter-reset(ng-show="labTypeFilter", ng-click='filterLabs(true)') Clear filter
+          button.icon-config.btn-reset(ng-model='labTypeFilter', btn-radio='"config"', uncheckable='', ng-change="filterLabs(false, 'Configuration')", title='Configuration')
+          button.icon-deploy.btn-reset(ng-model='labTypeFilter', btn-radio='"deploy"', uncheckable='', ng-change="filterLabs(false, 'Deployment')", title='Deployment')
+          button.icon-security.btn-reset(ng-model='labTypeFilter', btn-radio='"security"', uncheckable='', ng-change="filterLabs(false, 'Security')", title='Security')
+          button.icon-troubleshoot.btn-reset(ng-model='labTypeFilter', btn-radio='"troubleshoot"', uncheckable='', ng-change="filterLabs(false, 'Troubleshooting')", title='Troubleshooting')
 
         h2.section-title.section-title-red {{labsTitle}}
     .row
