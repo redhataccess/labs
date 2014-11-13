@@ -8,9 +8,9 @@
     if (!window.LABS_DEBUG) {
       window.deps = [];
       if (window.LT_IE_9) {
-        window.deps.push('app/shims.js?bust=0.0.2');
+        window.deps.push('app/shims.js?bust=0.0.3');
       }
-      window.deps.push('app/vendor.js?bust=0.0.2', 'app/app.js?bust=0.0.2');
+      window.deps.push('app/vendor.js?bust=0.0.3', 'app/app.js?bust=0.0.3');
     }
 
     window.require.config({

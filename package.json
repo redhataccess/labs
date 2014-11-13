@@ -1,6 +1,6 @@
 {
   "name": "labs",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "server/app.js",
   "dependencies": {
     "body-parser": "~1.9.2",
