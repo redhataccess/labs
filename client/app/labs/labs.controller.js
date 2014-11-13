@@ -1,8 +1,26 @@
 (function() {
   'use strict';
 
+
+  function initScroll($scope) {
+    if(!$scope.currentScope.firstLoad) {
+      return;
+    }
+    $scope.currentScope.firstLoad = false;
+    window.chrometwo_require(function() {
+      var main = document.getElementById('all-labs-main');
+      if (!main) {
+        return;
+      }
+      var padding = parseInt(window.getComputedStyle(main, null).getPropertyValue('padding-top'));
+      var top = main.offsetTop - padding - 35; // yay magic numbers
+      window.scrollTo(0, top);
+    });
+  }
+
   // Sets the initial values for the scope
   function initScope($scope, $filter, $location, labs) {
+    $scope.firstLoad = true;
     $scope.labTypeFilter = null;
     $scope.keys = {
       // keybinding to enable admin mode
@@ -23,8 +41,8 @@
     }
     if ($scope.labTypeFilter) {
       $scope.filterLabs();
+      $scope.$on('onRepeatLast', initScroll);
     }
-
   }
 
   function focusHack() {
@@ -39,7 +57,7 @@
       var loaded_labs = $preloaded && $preloaded.labs;
       $scope.isAdmin = false;
       $scope.filterLabs = function(clear) {
-         if (clear) {
+        if (clear) {
           this.labTypeFilter = null;
         }
         var type = this.labTypeFilter;
@@ -56,9 +74,9 @@
           } else if (type === 'troubleshoot') {
             $scope.labsTitle = 'Troubleshooting';
           }
-          $location.replace();
-          $location.search('type', type);
         }
+        $location.replace();
+        $location.search('type', type);
         $scope.labsTitle += ' Apps';
       };
       $scope.toggleAdmin = function() {

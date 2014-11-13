@@ -22,7 +22,7 @@
       .row
         .col-md-4.col-sm-6.lab(ng-repeat='lab in mostViewed track by lab.id')
           div(ng-include='"app/labs/views/_lab.html"')
-.band.labs.all-labs.inverse
+#all-labs-main.band.labs.all-labs.inverse
   .container
     .row
       .col-xs-12
@@ -35,7 +35,7 @@
 
         h2.section-title.section-title-red {{labsTitle}}
     .row
-      .col-md-4.col-sm-6.lab.animate(ng-repeat='lab in labs | filter:labTypeFilter && {type: labTypeFilter} track by lab.id')
+      .col-md-4.col-sm-6.lab.animate(ng-repeat='lab in labs | filter:labTypeFilter && {type: labTypeFilter} track by lab.id', on-last-repeat)
         div(ng-include='"app/labs/views/_lab.html"')
 
   .btn.btn-primary.btn-admin.btn-lg(ng-disabled='!isAdmin', ng-click='updateLabs()')
