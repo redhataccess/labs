@@ -38,27 +38,20 @@
     .controller('LabsCtrl', function($scope, $filter, $location, $http, $preloaded) {
       var loaded_labs = $preloaded && $preloaded.labs;
       $scope.isAdmin = false;
-      $scope.filterLabs = function() {
+      $scope.filterLabs = function(clear, title) {
+        if (clear) {
+          this.labTypeFilter = null;
+        }
         var type = this.labTypeFilter;
-        var search = {
-          type: type || ''
-        };
+
         if (type === null) {
           $scope.labsTitle = 'All';
           focusHack();
         } else {
-          if (type === 'config') {
-            $scope.labsTitle = 'Configuration';
-          } else if (type === 'deploy') {
-            $scope.labsTitle = 'Deployment';
-          } else if (type === 'security') {
-            $scope.labsTitle = 'Security';
-          } else if (type === 'troubleshoot') {
-            $scope.labsTitle = 'Troubleshooting';
-          }
+          $scope.labsTitle = title;
         }
         $location.replace();
-        $location.search(search);
+        $location.search('type', type);
         $scope.labsTitle += ' Apps';
       };
       $scope.toggleAdmin = function() {
