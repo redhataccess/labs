@@ -28,10 +28,10 @@
       .col-xs-12
         .btn-group.pull-right.labs-filter(ng-class="!labTypeFilter ? 'unfiltered': ''")
           .filter-reset(ng-show="labTypeFilter", ng-click='filterLabs(true)') Clear filter
-          button.icon-config.btn-reset(ng-model='labTypeFilter', btn-radio='"config"', uncheckable='', ng-change="filterLabs(false, 'Configuration')", title='Configuration')
-          button.icon-deploy.btn-reset(ng-model='labTypeFilter', btn-radio='"deploy"', uncheckable='', ng-change="filterLabs(false, 'Deployment')", title='Deployment')
-          button.icon-security.btn-reset(ng-model='labTypeFilter', btn-radio='"security"', uncheckable='', ng-change="filterLabs(false, 'Security')", title='Security')
-          button.icon-troubleshoot.btn-reset(ng-model='labTypeFilter', btn-radio='"troubleshoot"', uncheckable='', ng-change="filterLabs(false, 'Troubleshooting')", title='Troubleshooting')
+          button.icon-config.btn-reset(ng-model='labTypeFilter', btn-radio='"config"', uncheckable='', ng-change="filterLabs()", title='Configuration')
+          button.icon-deploy.btn-reset(ng-model='labTypeFilter', btn-radio='"deploy"', uncheckable='', ng-change="filterLabs()", title='Deployment')
+          button.icon-security.btn-reset(ng-model='labTypeFilter', btn-radio='"security"', uncheckable='', ng-change="filterLabs()", title='Security')
+          button.icon-troubleshoot.btn-reset(ng-model='labTypeFilter', btn-radio='"troubleshoot"', uncheckable='', ng-change="filterLabs()", title='Troubleshooting')
 
         h2.section-title.section-title-red {{labsTitle}}
     .row
