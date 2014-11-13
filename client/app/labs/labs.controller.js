@@ -47,12 +47,14 @@
           $scope.labsTitle = 'All';
           focusHack();
         } else {
-          if (type === 'diagnostics') {
-            $scope.labsTitle = 'Diagnostic';
+          if (type === 'config') {
+            $scope.labsTitle = 'Configuration';
+          } else if (type === 'deploy') {
+            $scope.labsTitle = 'Deployment';
           } else if (type === 'security') {
             $scope.labsTitle = 'Security';
-          } else if (type === 'performance') {
-            $scope.labsTitle = 'Performance';
+          } else if (type === 'troubleshoot') {
+            $scope.labsTitle = 'Troubleshooting';
           }
         }
         $location.replace();
