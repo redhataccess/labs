@@ -15,8 +15,8 @@
       a(href='/labsinfo/{{lab.lab_id}}/') More info
   .actions
     label.checkbox-inline
-      input.featured(type='checkbox', ng-model='lab.featured')
+      input.featured(type='checkbox', ng-model='lab.featured', ng-change='markDirty(lab)')
       | Featured
     label.checkbox-inline
-      input.mostviewed(type='checkbox', ng-model='lab.mostViewed')
+      input.mostviewed(type='checkbox', ng-model='lab.mostViewed', ng-change='markDirty(lab)')
       | Most Viewed

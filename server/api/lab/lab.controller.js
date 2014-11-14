@@ -39,9 +39,9 @@ function _save(lab_id, lab) {
 function upsertLabs(labs) {
   var deferred = Q.defer();
   var deferredList = [];
-  labs.forEach(function(lab) {
-    deferredList.push(_save(lab.lab_id, lab));
-  });
+  for (var key in labs) {
+    deferredList.push(_save(key, labs[key]));
+  }
 
   Q.all(deferredList).then(function() {
     deferred.resolve();

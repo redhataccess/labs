@@ -54,6 +54,7 @@
 
   angular.module('labsApp')
     .controller('LabsCtrl', function($scope, $filter, $location, $http, $preloaded) {
+      var dirtyLabs = {};
       var loaded_labs = $preloaded && $preloaded.labs;
       $scope.isAdmin = false;
       $scope.filterLabs = function(clear) {
@@ -92,13 +93,14 @@
             $scope.isAdmin = (result.authorized && result.internal);
           });
       };
+
+      $scope.markDirty = function(lab) {
+        dirtyLabs[lab.lab_id] = lab;
+      };
+
       $scope.updateLabs = function() {
-        var labs = $scope.labs;
-        if (this.labTypeFilter) {
-          // Filtered labs - mixin featured and mostViewed
-          labs = labs.concat($scope.featured, $scope.mostViewed);
-        }
-        $http.post('/labs/labs/', labs).success(function(labs) {
+        $http.post('/labs/labs/', dirtyLabs).success(function(labs) {
+          dirtyLabs = {};
           loaded_labs = labs;
           initScope($scope, $filter, $location, labs);
         });
