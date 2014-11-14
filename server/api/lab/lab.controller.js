@@ -12,7 +12,10 @@ function filterLabs(myLang, labs) {
   _.remove(labs, function(obj, i, arr) {
     if (obj.lang === 'en') {
       return _.find(arr, function(tmp_obj) {
-        return (tmp_obj.lang === myLang && tmp_obj.lab_id === obj.lab_id);
+        if (tmp_obj.lang === myLang && tmp_obj.lab_id === obj.lab_id) {
+          tmp_obj.featured = obj.featured;
+          return true;
+        }
       });
     }
     return false;
