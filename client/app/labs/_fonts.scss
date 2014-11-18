@@ -9,23 +9,24 @@
   font-style: normal;
 }
 
-[class^="icon-"], [class*=" icon-"], [class^="labs-icon-"], [class*=" labs-icon-"] {
-  font-family: 'labs-home';
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
+.labs-home {
+  [class^="icon-"], [class*=" icon-"], [class^="labs-icon-"], [class*=" labs-icon-"] {
+    font-family: 'labs-home';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
 
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-[class^="labs-icon-"]:before, [class^="icon-"]:before, [class*=" icon-"]:before {
-  font-family: 'labs-home', sans-serif;
-  font-weight: normal;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  [class^="labs-icon-"]:before, [class^="icon-"]:before, [class*=" icon-"]:before {
+    font-family: 'labs-home', sans-serif;
+    font-weight: normal;
+  }
 }
 
 .labs-icon-configuration:before, .icon-config:before {
